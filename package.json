@@ -1,0 +1,15 @@
+{
+  "name": "ouaic",
+  "version": "2.0.2",
+  "type": "module",
+  "main": ".opencode/plugins/skills.js",
+  "description": "Agent skills split by failure mode: discipline, methods, and judgment.",
+  "author": {
+    "name": "Ouaic Kaka"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ouaickaka/skills.git"
+  },
+  "license": "MIT"
+}
