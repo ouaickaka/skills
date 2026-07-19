@@ -11,5 +11,12 @@
     "type": "git",
     "url": "https://github.com/ouaickaka/skills.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky",
+    "validate:manifests": "node scripts/validate-manifests.js"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
 }
