@@ -1,0 +1,16 @@
+{
+  "name": "discipline",
+  "version": "2.1.3",
+  "description": "Behavioral correctives that keep coding agents from guessing, skipping checks, bulldozing work, and hiding failures.",
+  "author": {
+    "name": "Ouaic Kaka",
+    "url": "https://github.com/ouaickaka"
+  },
+  "homepage": "https://github.com/ouaickaka/skills",
+  "repository": "https://github.com/ouaickaka/skills",
+  "license": "MIT",
+  "keywords": [
+    "ouaic",
+    "ouaic discipline"
+  ]
+}

@@ -12,6 +12,16 @@
     "url": "https://github.com/ouaickaka/skills.git"
   },
   "license": "MIT",
+  "keywords": [
+    "pi-package"
+  ],
+  "pi": {
+    "skills": [
+      "./plugins/discipline/skills",
+      "./plugins/methods/skills",
+      "./plugins/judgment/skills"
+    ]
+  },
   "scripts": {
     "prepare": "husky",
     "validate:manifests": "node scripts/validate-manifests.js"

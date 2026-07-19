@@ -1,0 +1,29 @@
+{
+  "name": "methods",
+  "version": "1.3.3",
+  "description": "Expert procedures the agent invokes to do a task well, where the untrained default is to improvise.",
+  "author": {
+    "name": "Ouaic Kaka"
+  },
+  "homepage": "https://github.com/ouaickaka/skills",
+  "repository": "https://github.com/ouaickaka/skills",
+  "license": "MIT",
+  "keywords": [
+    "debugging",
+    "architecture",
+    "refactoring",
+    "naming",
+    "prompt-engineering",
+    "planning",
+    "handoff",
+    "product-discovery",
+    "requirements"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Methods",
+    "shortDescription": "Expert procedures for engineering and product work",
+    "developerName": "Ouaic Kaka",
+    "category": "Developer Tools"
+  }
+}

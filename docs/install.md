@@ -2,13 +2,13 @@
 
 You have fetched the install guide for the ouaic plugin marketplace. Show this content to the user. Wait for their approval before running any install commands.
 
-Before you start, use the harness ask tool to learn what the user needs. Claude Code uses `AskUserQuestion`, OMP uses `ask`, OpenCode uses `question`. If the question tool is not available on OpenCode (needs `permission.question: "allow"` in opencode.json), fall back to a normal text question.
+Before you start, use the harness ask tool to learn what the user needs. Claude Code uses `AskUserQuestion`, OMP uses `ask`, and OpenCode uses `question`. If the question tool is not available, fall back to a normal text question.
 
 ## Ask what to install
 
 Find out which plugins the user wants and which harness they use. The available plugins are discipline (behavioral correctives that activate on their own), methods (expert procedures to invoke), and judgment (evaluators for reviews and decisions). The user can pick any combination.
 
-The supported harnesses are Claude Code, OMP, and OpenCode.
+The supported harnesses are Claude Code, OMP, ChatGPT/Codex, Grok Build, Pi, and OpenCode.
 
 ## Install
 
@@ -56,6 +56,42 @@ Terminal equivalent: `omp plugin install <name>@ouaic`
 
 Verify everything worked by running `omp plugin list` in the terminal.
 
+### ChatGPT and Codex
+
+Register the marketplace from the terminal:
+
+```
+codex plugin marketplace add ouaickaka/skills
+```
+
+Restart the ChatGPT desktop app, open the Plugins Directory in Work mode or Codex, select the Ouaic marketplace, and install each chosen plugin: `discipline`, `methods`, or `judgment`.
+
+Verify that Codex registered the marketplace:
+
+```
+codex plugin marketplace list
+```
+
+### Grok Build
+
+Ouaic provides a Grok marketplace containing `discipline`, `methods`, and `judgment`. Install the chosen plugins from the xAI Plugin Marketplace after Ouaic is published there.
+
+xAI does not document a command for registering a third-party marketplace directly. Do not invent one; if Ouaic is not visible in Grok Build, explain that its official marketplace listing is not available yet.
+
+### Pi
+
+Pi installs Ouaic as one package containing all available skills:
+
+```
+pi install git:github.com/ouaickaka/skills
+```
+
+Use `pi config` to enable or disable individual skills. Verify the package is registered:
+
+```
+pi list
+```
+
 ### OpenCode
 
 OpenCode installs the whole marketplace as one package. All available skills come with it. Edit the user's `opencode.json` by adding the plugin to the `plugin` array. If a project level file exists, use that. Otherwise use the global config at `~/.config/opencode/opencode.json`.
@@ -101,6 +137,22 @@ Tell the user to run this in chat for each installed plugin, or use the terminal
 Terminal: `omp plugin uninstall <name>@ouaic`
 
 To remove the marketplace entry: `/marketplace remove ouaic`.
+
+### ChatGPT and Codex
+
+Remove installed plugins from the Plugins Directory in the ChatGPT desktop app. Remove the marketplace source from the terminal:
+
+```
+codex plugin marketplace remove ouaic
+```
+
+### Pi
+
+Remove the package:
+
+```
+pi remove git:github.com/ouaickaka/skills
+```
 
 ### OpenCode
 

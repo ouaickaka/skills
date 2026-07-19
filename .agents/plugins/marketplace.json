@@ -1,0 +1,44 @@
+{
+  "name": "ouaic",
+  "interface": {
+    "displayName": "Ouaic"
+  },
+  "plugins": [
+    {
+      "name": "discipline",
+      "source": {
+        "source": "local",
+        "path": "./plugins/discipline"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "methods",
+      "source": {
+        "source": "local",
+        "path": "./plugins/methods"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "judgment",
+      "source": {
+        "source": "local",
+        "path": "./plugins/judgment"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
