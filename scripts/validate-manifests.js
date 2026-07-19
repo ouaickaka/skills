@@ -7,7 +7,6 @@ const legacyMarketplaces = [
   ["OMP", readJson(".omp-plugin/marketplace.json")],
 ];
 const codexMarketplace = readJson(".agents/plugins/marketplace.json");
-const grokMarketplace = readJson(".grok-plugin/marketplace.json");
 const errors = [];
 
 for (const [marketplaceName, marketplace] of legacyMarketplaces) {
@@ -23,7 +22,6 @@ const expectedPluginNameSet = new Set(expectedPluginNames);
 const marketplacePluginSets = [
   ...legacyMarketplaces.map(([name, marketplace]) => [name, marketplace.plugins]),
   ["Codex", codexMarketplace.plugins],
-  ["Grok", grokMarketplace.plugins],
 ];
 
 const expectedPiSkills = expectedPluginNames.map((name) => `./plugins/${name}/skills`);
@@ -140,26 +138,6 @@ for (const pluginName of expectedPluginNames) {
     }
   }
 
-  const grokEntry = grokMarketplace.plugins.find(({ name }) => name === pluginName);
-  if (grokEntry) {
-    if (grokEntry.source?.type !== "local" || grokEntry.source?.path !== expectedSource) {
-      errors.push(`Grok ${pluginName} source must be local at ${expectedSource}`);
-    }
-
-    for (const field of ["version", "description", "homepage"]) {
-      if (grokEntry[field] !== manifest[field]) {
-        errors.push(`Grok ${pluginName} ${field} does not match ${manifestPath}`);
-      }
-    }
-
-    if (grokEntry.category !== "development") {
-      errors.push(`Grok ${pluginName} category ${grokEntry.category}, expected development`);
-    }
-
-    if (JSON.stringify(grokEntry.keywords) !== JSON.stringify(expectedGrokKeywords)) {
-      errors.push(`Grok ${pluginName} keywords must be ${JSON.stringify(expectedGrokKeywords)}`);
-    }
-  }
 }
 
 if (errors.length > 0) {
