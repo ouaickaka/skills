@@ -1,0 +1,63 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ouaic",
+  "owner": {
+    "name": "Ouaic Kaka"
+  },
+  "metadata": {
+    "description": "Agent skills split by failure mode: discipline, methods, and judgment.",
+    "version": "2.0.2"
+  },
+  "plugins": [
+    {
+      "name": "discipline",
+      "description": "Behavioral correctives that keep coding agents from guessing, skipping checks, bulldozing work, and hiding failures.",
+      "version": "2.1.3",
+      "source": "./plugins/discipline",
+      "category": "development",
+      "homepage": "https://github.com/ouaickaka/skills",
+      "keywords": [
+        "code-review",
+        "verification",
+        "safe-refactoring",
+        "debugging",
+        "git-safety",
+        "reporting"
+      ]
+    },
+    {
+      "name": "methods",
+      "description": "Expert procedures the agent invokes to do a task well, where the untrained default is to improvise.",
+      "version": "1.3.3",
+      "source": "./plugins/methods",
+      "category": "development",
+      "homepage": "https://github.com/ouaickaka/skills",
+      "keywords": [
+        "debugging",
+        "architecture",
+        "refactoring",
+        "naming",
+        "prompt-engineering",
+        "planning",
+        "handoff",
+        "product-discovery",
+        "requirements"
+      ]
+    },
+    {
+      "name": "judgment",
+      "description": "Evaluators the agent invokes to review and decide well, where the untrained default is to miss what matters.",
+      "version": "1.0.3",
+      "source": "./plugins/judgment",
+      "category": "development",
+      "homepage": "https://github.com/ouaickaka/skills",
+      "keywords": [
+        "code-review",
+        "accessibility",
+        "design-review",
+        "audit",
+        "ui-ux"
+      ]
+    }
+  ]
+}
