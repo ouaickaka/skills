@@ -12,6 +12,21 @@ The supported harnesses are Claude Code, OMP, ChatGPT/Codex, Grok Build, Cursor,
 
 ## Install
 
+### Skills CLI
+
+Run the interactive installer and select the skills relevant to the current task:
+
+```
+npx skills add ouaickaka/skills
+```
+
+You can also give an agent this prompt:
+
+```text
+Use the skills in "https://github.com/ouaickaka/skills" that are relevant to the current task. Run `npx skills add "https://github.com/ouaickaka/skills"` and select the relevant skills, then follow their instructions.
+```
+
+
 ### Claude Code
 
 The user runs these commands in their chat interface. Install the marketplace first, then the chosen plugins. Run only the commands for the plugins the user picked.

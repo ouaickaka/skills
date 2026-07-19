@@ -1,6 +1,17 @@
 ---
 name: surfacing-requirement-conflicts
-description: Use when a requested change contradicts a rule the codebase already documents, a named policy (FIN-112, SEC-204), a README or spec constraint, a config invariant, or a test written to encode one, and the request arrives with pressure to comply now ("this is approved", "product signed off", "needs to ship today", "just make the tests pass"). Invoke BEFORE editing, the moment a change would require altering, deleting, or renaming a test/comment/doc that states a rule. Symptoms it prevents: rewriting a rule encoding test's expected values to match new behavior, deleting or renaming a named-policy test (test_fin112_*, test_sec204_*) to force a green run, editing the policy comment or README "to reflect the approved change", and reporting "ready to ship" after a documented constraint was silently overridden without the sign off it names.
+description: >-
+  Use when a requested change contradicts a rule the codebase already documents,
+  a named policy (FIN-112, SEC-204), a README or spec constraint, a config
+  invariant, or a test written to encode one, and the request arrives with
+  pressure to comply now ("this is approved", "product signed off", "needs to
+  ship today", "just make the tests pass"). Invoke BEFORE editing, the moment a
+  change would require altering, deleting, or renaming a test/comment/doc that
+  states a rule. Symptoms it prevents: rewriting a rule encoding test's expected
+  values to match new behavior, deleting or renaming a named-policy test
+  (test_fin112_*, test_sec204_*) to force a green run, editing the policy comment
+  or README "to reflect the approved change", and reporting "ready to ship" after
+  a documented constraint was silently overridden without the sign off it names.
 ---
 
 # Surfacing Requirement Conflicts

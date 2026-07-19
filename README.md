@@ -8,6 +8,15 @@ A marketplace of skills for coding agents, split by the failure mode each one fi
 
 Choose one of these prompts:
 
+Install relevant skills directly:
+
+```text
+Use the skills in "https://github.com/ouaickaka/skills" that are relevant to the current task. Run `npx skills add "https://github.com/ouaickaka/skills"` and select the relevant skills, then follow their instructions.
+```
+
+Terminal command: `npx skills add ouaickaka/skills`
+
+
 Fetch the install guide (recommended):
 
 ```text
