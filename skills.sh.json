@@ -1,0 +1,54 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Discipline",
+      "description": "Holds behavior steady under pressure: verification, safety around destructive changes, faithful reporting.",
+      "skills": [
+        "asking-before-assuming",
+        "assessing-before-fixing",
+        "avoiding-speculative-complexity",
+        "challenging-domain-terms",
+        "confirming-diagnosis-before-acting",
+        "guarding-irreversible-changes",
+        "maintaining-memory-hygiene",
+        "preserving-working-state",
+        "reporting-outcomes-faithfully",
+        "surfacing-codebase-insights",
+        "surfacing-incidental-findings",
+        "surfacing-requirement-conflicts",
+        "verifying-before-done",
+        "writing-final-messages",
+        "writing-handoff-plans"
+      ]
+    },
+    {
+      "title": "Methods",
+      "description": "Expert procedures for work that otherwise gets improvised: debugging, naming, decomposition, motion design, prompts.",
+      "skills": [
+        "coining-names",
+        "debugging-to-root-cause",
+        "decomposing-by-information-hiding",
+        "designing-fluid-interfaces",
+        "eliciting-outcome-tradeoffs",
+        "naming-animation-effects",
+        "planning-motion-improvements",
+        "structuring-multi-session-work",
+        "writing-design-system-rules",
+        "writing-system-prompts"
+      ]
+    },
+    {
+      "title": "Judgment",
+      "description": "Sharpens reviews and decisions: accessibility, design systems, and interface motion.",
+      "skills": [
+        "auditing-design-systems",
+        "deciding-when-to-animate",
+        "finding-motion-opportunities",
+        "reviewing-accessibility",
+        "reviewing-interface-motion"
+      ]
+    }
+  ]
+}
