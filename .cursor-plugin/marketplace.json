@@ -1,0 +1,26 @@
+{
+  "name": "ouaic",
+  "owner": {
+    "name": "Ouaic Kaka"
+  },
+  "metadata": {
+    "description": "Agent skills split by failure mode: discipline, methods, and judgment."
+  },
+  "plugins": [
+    {
+      "name": "discipline",
+      "source": "plugins/discipline",
+      "description": "Behavioral correctives that keep coding agents from guessing, skipping checks, bulldozing work, and hiding failures."
+    },
+    {
+      "name": "methods",
+      "source": "plugins/methods",
+      "description": "Expert procedures the agent invokes to do a task well, where the untrained default is to improvise."
+    },
+    {
+      "name": "judgment",
+      "source": "plugins/judgment",
+      "description": "Evaluators the agent invokes to review and decide well, where the untrained default is to miss what matters."
+    }
+  ]
+}

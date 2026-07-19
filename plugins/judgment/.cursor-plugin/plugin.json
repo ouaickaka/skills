@@ -1,0 +1,21 @@
+{
+  "name": "judgment",
+  "displayName": "Judgment",
+  "version": "1.0.3",
+  "description": "Evaluators the agent invokes to review and decide well, where the untrained default is to miss what matters.",
+  "author": {
+    "name": "Ouaic Kaka"
+  },
+  "homepage": "https://github.com/ouaickaka/skills",
+  "repository": "https://github.com/ouaickaka/skills",
+  "license": "MIT",
+  "keywords": [
+    "code-review",
+    "accessibility",
+    "design-review",
+    "audit",
+    "ui-ux"
+  ],
+  "category": "developer-tools",
+  "skills": "./skills/"
+}

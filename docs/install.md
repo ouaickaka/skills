@@ -8,7 +8,7 @@ Before you start, use the harness ask tool to learn what the user needs. Claude 
 
 Find out which plugins the user wants and which harness they use. The available plugins are discipline (behavioral correctives that activate on their own), methods (expert procedures to invoke), and judgment (evaluators for reviews and decisions). The user can pick any combination.
 
-The supported harnesses are Claude Code, OMP, ChatGPT/Codex, Grok Build, Pi, and OpenCode.
+The supported harnesses are Claude Code, OMP, ChatGPT/Codex, Grok Build, Cursor, Pi, and OpenCode.
 
 ## Install
 
@@ -78,6 +78,12 @@ Ouaic provides a Grok marketplace containing `discipline`, `methods`, and `judgm
 
 xAI does not document a command for registering a third-party marketplace directly. Do not invent one; if Ouaic is not visible in Grok Build, explain that its official marketplace listing is not available yet.
 
+### Cursor
+
+After Ouaic is published in the Cursor Marketplace, open **Customize**, find `discipline`, `methods`, or `judgment`, and install the chosen plugins.
+
+Teams and Enterprise admins can use the repository directly as a team marketplace: open **Dashboard → Plugins**, choose **Add Marketplace → Import from Repo**, and enter `https://github.com/ouaickaka/skills`.
+
 ### Pi
 
 Pi installs Ouaic as one package containing all available skills:
@@ -145,6 +151,10 @@ Remove installed plugins from the Plugins Directory in the ChatGPT desktop app. 
 ```
 codex plugin marketplace remove ouaic
 ```
+
+### Cursor
+
+Open **Customize** and uninstall or disable the Ouaic plugins individually. Team admins manage imported marketplace access under **Dashboard → Plugins**.
 
 ### Pi
 

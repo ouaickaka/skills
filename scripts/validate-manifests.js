@@ -7,6 +7,7 @@ const legacyMarketplaces = [
   ["OMP", readJson(".omp-plugin/marketplace.json")],
 ];
 const codexMarketplace = readJson(".agents/plugins/marketplace.json");
+const cursorMarketplace = readJson(".cursor-plugin/marketplace.json");
 const errors = [];
 
 for (const [marketplaceName, marketplace] of legacyMarketplaces) {
@@ -22,6 +23,7 @@ const expectedPluginNameSet = new Set(expectedPluginNames);
 const marketplacePluginSets = [
   ...legacyMarketplaces.map(([name, marketplace]) => [name, marketplace.plugins]),
   ["Codex", codexMarketplace.plugins],
+  ["Cursor", cursorMarketplace.plugins],
 ];
 
 const expectedPiSkills = expectedPluginNames.map((name) => `./plugins/${name}/skills`);
@@ -54,14 +56,17 @@ for (const pluginName of expectedPluginNames) {
   const manifestPath = `plugins/${pluginName}/plugin.json`;
   const codexManifestPath = `plugins/${pluginName}/.codex-plugin/plugin.json`;
   const grokManifestPath = `plugins/${pluginName}/.grok-plugin/plugin.json`;
+  const cursorManifestPath = `plugins/${pluginName}/.cursor-plugin/plugin.json`;
   let manifest;
   let codexManifest;
   let grokManifest;
+  let cursorManifest;
 
   try {
     manifest = readJson(manifestPath);
     codexManifest = readJson(codexManifestPath);
     grokManifest = readJson(grokManifestPath);
+    cursorManifest = readJson(cursorManifestPath);
   } catch (error) {
     errors.push(`Cannot read manifests for ${pluginName}: ${error.message}`);
     continue;
@@ -74,6 +79,7 @@ for (const pluginName of expectedPluginNames) {
   for (const [platformManifestPath, platformManifest] of [
     [codexManifestPath, codexManifest],
     [grokManifestPath, grokManifest],
+    [cursorManifestPath, cursorManifest],
   ]) {
     for (const field of ["name", "version", "description", "homepage"]) {
       if (platformManifest[field] !== manifest[field]) {
@@ -88,8 +94,13 @@ for (const pluginName of expectedPluginNames) {
     }
   }
 
-  if (JSON.stringify(codexManifest.keywords) !== JSON.stringify(manifest.keywords)) {
-    errors.push(`${codexManifestPath} keywords do not match ${manifestPath}`);
+  for (const [platformManifestPath, platformManifest] of [
+    [codexManifestPath, codexManifest],
+    [cursorManifestPath, cursorManifest],
+  ]) {
+    if (JSON.stringify(platformManifest.keywords) !== JSON.stringify(manifest.keywords)) {
+      errors.push(`${platformManifestPath} keywords do not match ${manifestPath}`);
+    }
   }
 
   const expectedGrokKeywords = ["ouaic", `ouaic ${pluginName}`];
@@ -99,6 +110,14 @@ for (const pluginName of expectedPluginNames) {
 
   if (codexManifest.skills !== "./skills/") {
     errors.push(`${codexManifestPath} skills ${codexManifest.skills}, expected ./skills/`);
+  }
+
+  if (cursorManifest.skills !== "./skills/") {
+    errors.push(`${cursorManifestPath} skills ${cursorManifest.skills}, expected ./skills/`);
+  }
+
+  if (cursorManifest.category !== "developer-tools") {
+    errors.push(`${cursorManifestPath} category ${cursorManifest.category}, expected developer-tools`);
   }
 
   for (const [marketplaceName, marketplace] of legacyMarketplaces) {
@@ -138,6 +157,18 @@ for (const pluginName of expectedPluginNames) {
     }
   }
 
+  const cursorEntry = cursorMarketplace.plugins.find(({ name }) => name === pluginName);
+  if (cursorEntry) {
+    const expectedCursorSource = `plugins/${pluginName}`;
+    if (cursorEntry.source !== expectedCursorSource) {
+      errors.push(`Cursor ${pluginName} source ${cursorEntry.source}, expected ${expectedCursorSource}`);
+    }
+
+    if (cursorEntry.description !== manifest.description) {
+      errors.push(`Cursor ${pluginName} description does not match ${manifestPath}`);
+    }
+  }
+
 }
 
 if (errors.length > 0) {
@@ -146,5 +177,5 @@ if (errors.length > 0) {
 }
 
 console.log(
-  `Manifest validation passed for ${expectedPluginNames.length} plugins across Claude, OMP, Codex, Grok, and Pi.`,
+  `Manifest validation passed for ${expectedPluginNames.length} plugins across Claude, OMP, Codex, Cursor, Grok, and Pi.`,
 );

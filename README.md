@@ -21,12 +21,13 @@ Paste the commands directly:
 ```text
 Install ouaic. These plugins add discipline, methods, and judgment skills for the agent.
 
-Use the harness ask tool to learn which plugins the user wants and which harness they use. Claude Code uses AskUserQuestion, OMP uses ask, and OpenCode uses question (needs permission.question: "allow" in opencode.json). For ChatGPT/Codex, Grok Build, Pi, or an unavailable question tool, ask in text.
+Use the harness ask tool to learn which plugins the user wants and which harness they use. Claude Code uses AskUserQuestion, OMP uses ask, and OpenCode uses question (needs permission.question: "allow" in opencode.json). For ChatGPT/Codex, Grok Build, Cursor, Pi, or an unavailable question tool, ask in text.
 
 For Claude Code: tell the user to run /plugin marketplace add https://github.com/ouaickaka/skills.git in their chat (terminal: claude plugin marketplace add https://github.com/ouaickaka/skills.git). Then install each chosen plugin with /plugin install <name>@ouaic (terminal: claude plugin install <name>@ouaic), where <name> is discipline, methods, or judgment. Only install the plugins the user chose. Verify with claude plugin list.
 For OMP: tell the user to run /marketplace add https://github.com/ouaickaka/skills.git in their chat (terminal: omp plugin marketplace add https://github.com/ouaickaka/skills.git). Then install each chosen plugin with /marketplace install <name>@ouaic (terminal: omp plugin install <name>@ouaic), where <name> is discipline, methods, or judgment. Only install the plugins the user chose. Verify with omp plugin list.
 For ChatGPT/Codex: run codex plugin marketplace add ouaickaka/skills, restart the ChatGPT desktop app, and install each chosen plugin from the Ouaic marketplace in the Plugins Directory. Verify with codex plugin marketplace list.
 For Grok Build: install discipline, methods, or judgment from the xAI Plugin Marketplace after Ouaic is published there. If it is not visible, explain that the official listing is not available yet; xAI does not document a direct third-party marketplace command.
+For Cursor: after publication, install discipline, methods, or judgment from Customize. Teams and Enterprise admins can import https://github.com/ouaickaka/skills under Dashboard → Plugins → Add Marketplace.
 For Pi: run pi install git:github.com/ouaickaka/skills. Pi installs all available skills as one package; use pi config to enable or disable individual skills. Verify with pi list.
 For OpenCode: add "plugin": ["ouaic@git+https://github.com/ouaickaka/skills.git"] to opencode.json, restart, and verify by asking to list the skills.
 ```
